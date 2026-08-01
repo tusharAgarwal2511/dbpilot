@@ -12,10 +12,10 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
-    "@ai-sdk/google": "^4.0.30",
-    "@ai-sdk/react": "^4.0.48",
+    "@ai-sdk/google": "^4.0.31",
+    "@ai-sdk/react": "^4.0.50",
     "@libsql/client": "^0.17.4",
-    "ai": "^7.0.45",
+    "ai": "^7.0.47",
     "dotenv": "^17.4.2",
     "drizzle-kit": "^0.31.10",
     "drizzle-orm": "^0.45.2",

@@ -1,0 +1,158 @@
+[
+    {
+        "parts": [
+            {
+                "type": "text",
+                "text": "how many sales we did today"
+            }
+        ],
+        "id": "Bf8M7vQbjwTUReZW",
+        "role": "user"
+    },
+    {
+        "id": "Ub7lvZ0UYJ2Hxzjj",
+        "role": "assistant",
+        "parts": [
+            {
+                "type": "step-start"
+            },
+            {
+                "type": "tool-schema",
+                "toolCallId": "i5rS7nq6",
+                "state": "output-available",
+                "input": {},
+                "output": "\n                        CREATE TABLE products (\n                            id integer PRIMARY KEY AUTOINCREMENT NOT NULL,\n                            name text NOT NULL,\n                            category text NOT NULL,\n                            price real NOT NULL,\n                            stock integer DEFAULT 0 NOT NULL,\n                            created_at text DEFAULT CURRENT_TIMESTAMP\n                        );\n                        --> statement-breakpoint\n                        CREATE TABLE sales (\n                            id integer PRIMARY KEY AUTOINCREMENT NOT NULL,\n                            product_id integer NOT NULL,\n                            quantity integer NOT NULL,\n                            total_amount real NOT NULL,\n                            sale_date text DEFAULT CURRENT_TIMESTAMP,\n                            customer_name text NOT NULL,\n                            region text NOT NULL,\n                            FOREIGN KEY (product_id) REFERENCES products(id) ON UPDATE no action ON DELETE no action\n                        );\n                    ",
+                "callProviderMetadata": {
+                    "google": {
+                        "thoughtSignature": "EjQKMgERTTIPO+3L1G4YnATJxlPqNKs6cuox2CDtNg1WGvMH1AbRInUsvwfWiwfaqLUDtPBV"
+                    }
+                },
+                "resultProviderMetadata": {
+                    "google": {
+                        "thoughtSignature": "EjQKMgERTTIPO+3L1G4YnATJxlPqNKs6cuox2CDtNg1WGvMH1AbRInUsvwfWiwfaqLUDtPBV"
+                    }
+                }
+            },
+            {
+                "type": "step-start"
+            },
+            {
+                "type": "tool-db",
+                "toolCallId": "T0KZzMRl",
+                "state": "output-available",
+                "input": {
+                    "query": "SELECT COUNT(*) AS total_sales_count, SUM(total_amount) AS total_revenue FROM sales WHERE DATE(sale_date) = DATE('now');"
+                },
+                "output": {
+                    "rows": [
+                        {
+                            "total_sales_count": 0,
+                            "total_revenue": null
+                        }
+                    ],
+                    "columns": [
+                        "total_sales_count",
+                        "total_revenue"
+                    ]
+                },
+                "callProviderMetadata": {
+                    "google": {
+                        "thoughtSignature": "EjQKMgERTTIP3EWfr+NP/4PoAnB+iKo5GBt4gzQ/wfRK3CjKuIAxKV/Wvwxse/5YKSxElw//"
+                    }
+                },
+                "resultProviderMetadata": {
+                    "google": {
+                        "thoughtSignature": "EjQKMgERTTIP3EWfr+NP/4PoAnB+iKo5GBt4gzQ/wfRK3CjKuIAxKV/Wvwxse/5YKSxElw//"
+                    }
+                }
+            },
+            {
+                "type": "step-start"
+            },
+            {
+                "type": "tool-db",
+                "toolCallId": "TWVf9qM4",
+                "state": "output-available",
+                "input": {
+                    "query": "SELECT MAX(sale_date) FROM sales;"
+                },
+                "output": {
+                    "rows": [
+                        {
+                            "MAX(sale_date)": "2026-07-31 23:20:25"
+                        }
+                    ],
+                    "columns": [
+                        "MAX(sale_date)"
+                    ]
+                },
+                "callProviderMetadata": {
+                    "google": {
+                        "thoughtSignature": "EjQKMgERTTIPrxeWColIj9WbHAugZ8pnQHJuTVmJYD3NOzQIb2DqoixbjFjrUgIbXHykOgs0"
+                    }
+                },
+                "resultProviderMetadata": {
+                    "google": {
+                        "thoughtSignature": "EjQKMgERTTIPrxeWColIj9WbHAugZ8pnQHJuTVmJYD3NOzQIb2DqoixbjFjrUgIbXHykOgs0"
+                    }
+                }
+            },
+            {
+                "type": "step-start"
+            },
+            {
+                "type": "tool-db",
+                "toolCallId": "xAiDVZrl",
+                "state": "output-available",
+                "input": {
+                    "query": "SELECT COUNT(*) AS total_sales_count, SUM(total_amount) AS total_revenue FROM sales WHERE DATE(sale_date) = '2026-07-31';"
+                },
+                "output": {
+                    "rows": [
+                        {
+                            "total_sales_count": 12,
+                            "total_revenue": 6632.51
+                        }
+                    ],
+                    "columns": [
+                        "total_sales_count",
+                        "total_revenue"
+                    ]
+                },
+                "callProviderMetadata": {
+                    "google": {
+                        "thoughtSignature": "EjQKMgERTTIP/5Td41gbPZrQf5bdP3FXimNpRZwiA6AH2mFSzMpaD1T+M1xdNb6JQNZl84jJ"
+                    }
+                },
+                "resultProviderMetadata": {
+                    "google": {
+                        "thoughtSignature": "EjQKMgERTTIP/5Td41gbPZrQf5bdP3FXimNpRZwiA6AH2mFSzMpaD1T+M1xdNb6JQNZl84jJ"
+                    }
+                }
+            },
+            {
+                "type": "step-start"
+            },
+            {
+                "type": "text",
+                "text": "It looks like there are no recorded sales for today (August 1, 2026). \n\nHowever, looking at the most recent activity in the database from yesterday (July 31, 2026), you made **12 sales** totaling **$6,632.51**.",
+                "providerMetadata": {
+                    "google": {
+                        "thoughtSignature": "EjQKMgERTTIPEC+1n4g6Wgetn4y2x61VlZMgVoj3F/cJDKJe1Z21vvJxA5qx2kf+9E374T2w"
+                    }
+                },
+                "state": "done"
+            }
+        ]
+    },
+    {
+        "parts": [
+            {
+                "type": "text",
+                "text": "what are all the products we have"
+            }
+        ],
+        "id": "cdxHwYwqSYNrZt1Y",
+        "role": "user"
+    }
+]
