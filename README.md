@@ -91,10 +91,12 @@ flowchart LR
 
 ## 📸 Screenshots
 
-| | |
-|---|---|
-| ![Screenshot](screenshots/dbpsc1.png) | ![Screenshot](screenshots/dbpsc2.png) |
-| ![Screenshot](screenshots/dbpsc3.png) | ![Screenshot](screenshots/dbpsc4.png) |
+| Preview |
+|---|
+| ![Screenshot](screenshots/dbpsc1.png) |
+| ![Screenshot](screenshots/dbpsc2.png) |
+| ![Screenshot](screenshots/dbpsc3.png) |
+| ![Screenshot](screenshots/dbpsc4.png) |
 
 ---
 
