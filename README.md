@@ -83,17 +83,18 @@ flowchart LR
 - `app/` – Next.js application routes and page layout
 - `components/` – reusable UI components
 - `lib/` – database, AI, and utility helpers
-- `public/` – static assets and icons
-- `screenshots/` – demo images for the README
-- `package.json` – project dependencies and scripts
+- public – static assets and icons
+- screenshots – demo images for the README
+- package.json – project dependencies and scripts
 
 ---
 
 ## 📸 Screenshots
 
-| | | | |
-|---|---|---|---|
-| ![Screenshot](screenshots/dbpsc1.png) | ![Screenshot](screenshots/dbpsc2.png) | ![Screenshot](screenshots/dbpsc3.png) | ![Screenshot](screenshots/dbpsc4.png) |
+| | |
+|---|---|
+| ![Screenshot](screenshots/dbpsc1.png) | ![Screenshot](screenshots/dbpsc2.png) |
+| ![Screenshot](screenshots/dbpsc3.png) | ![Screenshot](screenshots/dbpsc4.png) |
 
 ---
 
